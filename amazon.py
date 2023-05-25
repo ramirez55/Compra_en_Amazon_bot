@@ -41,11 +41,19 @@ def check_cart():
         print("El producto se ha agregado al carrito")
     except:
         print("No se puedo agregar el producto al carrito")
-
-api_id: 24253609
+api_id = 24253609
 api_hash = "20c1618672d0d23844bf79d8a25de44f"
 bot_token = "5721192910:AAGM92Ytd21sW8fufKt4f4ML3oeUbLbrLn8"
-#inicio
+
+
+	bot = Client("bot",api_id=api_id,api_hash=api_hash,bot_token=bot_token)
+boss = ['darielxd','YasielCL']#usuarios supremos
+
+Configs = {"uclv":'',"gtm":"","uvs":"","ltu":"", 
+			"ucuser": "", "ucpass":"","uclv_p":"", "gp":None, "s":"On", 
+			'YasielCL': {'z': 99,"m":"e","a":"c","t":"y","gp":False},
+			'darielxd': {'z': 99,"m":"e","a":"c","t":"y","gp":False}	                }
+
 #inicio
 @bot.on_message(filters.command("start", prefixes="/") & filters.private)
 async def start(client: Client, message: Message):
