@@ -9,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 options = webdriver.ChromeOptions()
 options.add_argument('-ignore-certificate-errors')
 options.add_argument('-ignore-ssl-errors')
-driver = webdriver.Firefox(executable_path='snap/bin/firefox')
+driver = webdriver.Chrome('https://www.google.com/')
 
 def login(email, password):
     driver.get("https://www.amazon.com/")
