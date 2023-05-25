@@ -16,8 +16,7 @@ def login(email, password):
     driver.find_element_by_id("ap_email").send_keys(email)
     driver.find_element_by_id("continue").click()
     driver.find_element_by_id("ap_password").send_keys(password)
-
-driver.find_element_by_id("signInSubmit").click()
+    driver.find_element_by_id("signInSubmit").click()
 
 def search_product(product_name):
     driver.get("https://www.amazon.com/")
