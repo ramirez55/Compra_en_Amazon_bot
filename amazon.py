@@ -45,3 +45,23 @@ def check_cart():
 api_id: 24253609
 api_hash = "20c1618672d0d23844bf79d8a25de44f"
 bot_token = "5721192910:AAGM92Ytd21sW8fufKt4f4ML3oeUbLbrLn8"
+#inicio
+
+@bot.on_message(filters.command("start", prefixes="/") & filters.private)
+async def start(client: Client, message: Message):
+	username = message.from_user.username
+	send = message.reply
+	try:await get_messages()
+	except:await send_config()
+	if comprobacion_de_user(username) == False:
+		await send("⛔ 𝑵𝒐 𝒕𝒊𝒆𝒏𝒆 𝒂𝒄𝒄𝒆𝒔𝒐")
+		return
+	else:pass
+	zipps = str(Configs[username]["z"])
+	auto = Configs[username]["t"]
+	total = shutil.disk_usage(os.getcwd())[0]
+	used = shutil.disk_usage(os.getcwd())[1]
+	free = shutil.disk_usage(os.getcwd())[2]	
+##	uname = platform.uname()
+##	svmem = psutil.virtual_memory()
+	a = await client.send_message(username,'**🔎 Buscando Datos**')
